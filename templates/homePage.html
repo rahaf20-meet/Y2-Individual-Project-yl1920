@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html>
+<link rel="stylesheet" type="text/css" href="../static/test.css">
+<script type="text/javascript" src="test.js"></script>
+<head>
+	<title>websitetest</title>
+</head>
+<body>
+<!-- <div class="text">	
+	<h2>Denim Longline T-Shirt Dress With Split</h2>
+</div> -->
+<!--  <a routerLink="/Service/Sign_in"><button class="btn btn-success pull-right" > Add Customer</button></a> -->
+<!-- <button type="button" class="btn btn-primary-outline pull-right" (click)="btnClick();"><i class="fa fa-plus"></i> Add</button> -->    
+
+<button id="north" style="width:50px; color:white; border-radius:50px;"><a href="{{ url_for('north') }}"> N</a></button>
+<button id="south" style="width:50px; color:white; border-radius:50px;"><a href="{{ url_for('south') }}">S</a></button>
+<button id="east" style="width:50px; color:white; border-radius:50px;"><a href="{{ url_for('east') }}">E</a></button>
+<button id="west" style="width:50px; color:white; border-radius:50px;"><a href="{{ url_for('west') }}">W</a></button>
+
+<button style="width:75px; position: absolute;
+  right:0; border-radius: 25px;" id='login'><a href="{{url_for('login')}}"> login </a></button>
+
+<form action='/logout' method='POST'>
+<button id="logout" style="width:75px; position: absolute; right:0; border-radius: 25px;">logout</button>
+</form>
+
+<script type="text/javascript">
+	if ("{{log}}" == "False") {
+		console.log('gggg')
+		document.getElementById('logout').style.display='none';
+	}
+	else{
+		document.getElementById('login').style.display='none';
+	}
+
+</script>
+<!-- 
+<div id="id01" class="modal"> 
+  
+  <form class="modal-content animate" action="/action_page.php" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="img_avatar2.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <button type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+</div> -->
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<!-- <button onclick="document.getElementById('id01').style.display='block'" style="width:100px; position: absolute;
+  right:50; top:0; border-radius: 25px;">Sign Up</button>
+
+<div id="id02" class="modal2">
+  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+  <form class="modal-content" action="/action_page.php">
+    <div class="container">
+      <h1>Sign Up</h1>
+      <p>Please fill in this form to create an account.</p>
+      <hr>
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+
+      <label for="psw-repeat"><b>Repeat Password</b></label>
+      <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+      
+      <label>
+        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+      </label>
+
+      <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        <button type="submit" class="signupbtn">Sign Up</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id02');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script> -->
+
+</body>
+</html>

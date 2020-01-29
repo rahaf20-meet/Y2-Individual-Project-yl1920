@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+<link rel="stylesheet" type="text/css" href="../static/test.css">
+<script type="text/javascript" src="test.js"></script>
+<head>
+	<title>websitetest</title>
+</head>
+<body>
+<!-- <div class="text">
+	<h2>Denim Longline T-Shirt Dress With Split</h2>
+</div> -->
+<!--  <a routerLink="/Service/Sign_in"><button class="btn btn-success pull-right" > Add Customer</button></a> -->
+<!-- <button type="button" class="btn btn-primary-outline pull-right" (click)="btnClick();"><i class="fa fa-plus"></i> Add</button> -->    
+
+<button id="north" style="width:50px; color:white; border-radius:50px;"><a href="{{ url_for('north') }}"> N</a></button>
+<button id="south" style="width:50px; color:white; border-radius:50px;" [routerLink]='south'>S</button>
+<button id="east" style="width:50px; color:white; border-radius:50px;" [routerLink]='east'>E</button>
+<button id="west" style="width:50px; color:white; border-radius:50px;" [routerLink]= 'west'>W</button>
+
+<button onclick="document.getElementById('id01').style.display='block'" style="width:75px; position: absolute;
+  right:0; border-radius: 25px;">Login</button>
+
+<div id="id01" class="modal"> 
+  
+  <form class="modal-content animate" action="/action_page.php" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="img_avatar2.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <button type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+</body>
+</html>

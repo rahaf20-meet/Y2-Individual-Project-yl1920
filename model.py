@@ -9,11 +9,13 @@ Base = declarative_base()
 class North(Base):
 	__tablename__ = "north"
 	Id = Column(Integer, primary_key=True)
-	top = Column(Float)
-	left = Column(Float)
 	locationName = Column(String)
 	locationInfo = Column(String)
 	pictureLink = Column(String)
+	top = Column(Float)
+	left = Column(Float)
+	# def __repr__(self):
+	# 	return str([self.locationName, self.locationInfo, self.pictureLink, self.top,self.left])
 
 class South(Base):
 	__tablename__ = "south"
@@ -42,12 +44,13 @@ class West(Base):
 	locationInfo = Column(String)
 	pictureLink = Column(String)
 
-# class Information(Base):
-# 	__tablename__ = "info"
-# 	Id = Column(Integer, primary_key=True)
-# 	locationName = Column(String)
-# 	locationInfo = Column(String)
-# 	pictureLink = Column(String)
+class Information(Base):
+	__tablename__ = "info"
+	Id = Column(Integer, primary_key=True)
+	locationName = Column(String)
+	locationInfo = Column(String)
+	pictureLink = Column(String)
+	compass = Column(String)
 
 class User(Base):
     __tablename__ = "users"

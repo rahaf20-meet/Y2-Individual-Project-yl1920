@@ -10,6 +10,8 @@ def createSession():
 	session = DBSession()
 	return session 
 
+
+
 def add_user(username,password):
 	session = createSession()
 	user = User(username=username, password=password)
@@ -28,19 +30,47 @@ def query_by_user(username,password):
 			return None
 	return user
 
-def addNorth(top,left,locationName,locationInfo,pictureLink):
+# def add_city_north(locationName,locationInfo,pictureLink,top,left):
+# 	session = createSession()
+# 	city = North(locationName=locationName,locationInfo=locationInfo,pictureLink=pictureLink,top=top,left=left)
+# 	session.add(city)
+# 	session.commit()
+# 	session.close()
+
+# def add_city_south(locationName,locationInfo,pictureLink,top,left):
+# 	session = createSession()
+# 	city = South(locationName=locationName,locationInfo=locationInfo,pictureLink=pictureLink,top=top,left=left)
+# 	session.add(city)
+# 	session.commit()
+# 	session.close()
+
+# def add_city_east(locationName,locationInfo,pictureLink,top,left):
+# 	session = createSession()
+# 	city = East(locationName=locationName,locationInfo=locationInfo,pictureLink=pictureLink,top=top,left=left)
+# 	session.add(city)
+# 	session.commit()
+# 	session.close()
+
+# def add_city_west(locationName,locationInfo,pictureLink,top,left):
+# 	session = createSession()
+# 	city = West(locationName=locationName,locationInfo=locationInfo,pictureLink=pictureLink,top=top,left=left)
+# 	session.add(city)
+# 	session.commit()
+# 	session.close()
+
+def addNorth(locationName,locationInfo,pictureLink,top,left):
 	session = createSession()
 	north_object = North (
 		top=top,
 		left=left,
 		locationName=locationName,
 		locationInfo=locationInfo,
-		pictureLink=pictureLink),
+		pictureLink=pictureLink)
 	session.add(north_object)
 	session.commit()
 	session.close()
 
-def addSouth(top,left,locationName,locationInfo,pictureLink):
+def addSouth(locationName,locationInfo,pictureLink,top,left):
 	session = createSession()
 	south_object = South (
 		top=top,
@@ -52,7 +82,7 @@ def addSouth(top,left,locationName,locationInfo,pictureLink):
 	session.commit()
 	session.close()
 
-def addEast(top,left,locationName,locationInfo,pictureLink):
+def addEast(locationName,locationInfo,pictureLink, top,left):
 	session = createSession()
 	east_object = East (
 		top=top,
@@ -64,7 +94,7 @@ def addEast(top,left,locationName,locationInfo,pictureLink):
 	session.commit()
 	session.close()
 
-def addWest(top,left,locationName,locationInfo,pictureLink):
+def addWest(locationName,locationInfo,pictureLink,top,left):
 	session = createSession()
 	west_object = West (
 		top=top,
@@ -82,7 +112,7 @@ def query_all_north():
       North).all()
 	session.close()
 	return north
-
+print(query_all_north())
 def query_all_south():
 	session = createSession()
 	south = session.query(
@@ -103,7 +133,6 @@ def query_all_west():
       West).all()
 	session.close()
 	return west
-
 
 # def editLocation(Id): #by id
 # 	session = createSession()
@@ -152,4 +181,3 @@ def query_all_west():
 
 
 # def add_to_cart(productID):
-

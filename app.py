@@ -1,6 +1,6 @@
 from flask import Flask, request, redirect, url_for, render_template, request
 from flask import session as login_session
-from databases import query_all_north, createSession, addNorth, query_all_south, query_all_east, query_all_west, query_by_user, add_user
+from databases import query_all_north, createSession, addNorth, query_all_south, query_all_east, query_all_west, query_by_user, add_user, addEast, addWest, addSouth
 
 
 app = Flask(__name__)
@@ -15,6 +15,11 @@ def test():
 @app.route('/login', methods= ['GET','POST'])
 def login():
 	if request.method == 'POST':
+		if request.form['password'] == 'rahafzorba':
+			return render_template('admin.html')
+		else: 
+			pass
+
 		user = query_by_user(request.form['username'], request.form["password"])
 		if user != None:
 			login_session['name'] = user.username
@@ -35,6 +40,40 @@ def signup():
     else:
     	return render_template('signup.html')
 
+@app.route('/admin' , methods=['POST','GET'])
+def admin():
+	if request.method == 'POST':
+		if request.form['password'] == 'rahafzorba':
+			return render_template('admin.html')
+		else:
+			return render_template('homePage.html')
+		locationName = request.form['locationName']
+		locationInfo = request.form['locationInfo']
+		pictureLink = request.form['pictureLink']
+		top = request.form['top']
+		left = request.form['left']
+		compass = request.form['compass']
+
+		if compass == 'south':
+			add_South(locationName,locationInfo,pictureLink,top,left)
+			return redirect(url_for('south'))
+		if compass == 'north':
+			addNorth(locationName,locationInfo,pictureLink,top,left)
+			return redirect(url_for('north'))
+
+		elif compass == 'east':
+			addEast(locationName,locationInfo,pictureLink,top,left)
+			return redirect(url_for('east'))
+		elif compass == 'west':
+			addWest(locationName,locationInfo,pictureLink,top,left)
+			return redirect(url_for('west'))
+		return render_template('homePage.html')
+	else:
+		return render_template('admin.html')
+
+def compass():
+	compass = request.form['compass']
+
 @app.route('/logged-in')
 def logged_in():
     return render_template('profile.html')
@@ -48,7 +87,7 @@ def logout():
 @app.route('/north')
 def north():
 	allLocationsnorth = query_all_north()
-	return render_template("north.html", allLocationsnorth=allLocationsnorth)
+	return render_template('north.html', allLocationsnorth=allLocationsnorth)		
 
 @app.route('/south')
 def south():
@@ -63,12 +102,10 @@ def east():
 @app.route('/west')
 def west():
 	allLocationswest= query_all_west()
-	return render_template("west.html",allLocationssouth=allLocationseast)
+	return render_template("west.html",allLocationssouth=allLocationswest)
 
-@app.route('/admin')
-	def admin():
-		return render_template("admin.html")
 
+# add_city_north("jenin","bla","picc.jpg",300,200)
 
 
 if __name__ == '__main__':

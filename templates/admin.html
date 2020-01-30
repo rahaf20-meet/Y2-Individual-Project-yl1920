@@ -21,49 +21,60 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="../vendorf/daterangepicker/daterangepicker.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="../static/util.css">
-	<link rel="stylesheet" type="text/css" href="../static/main.css">
+	<link rel="stylesheet" type="text/css" href="../static/utilf.css">
+	<link rel="stylesheet" type="text/css" href="../static/mainf.css">
 <!--===============================================================================================-->
 </head>
 <body>
-
+<button></button>
 
 	<div class="container-contact100">
 
 		<div class="wrap-contact100">
-			<form class="contact100-form validate-form">
-				<span class="contact100-form-title">
-					Send Us A Message
+			<form class="contact100-form validate-form" method="POST" action='/admin'>
+				<span class="contact100-form-title" >
+					Add a City
 				</span>
 
-				<div class="wrap-input100 validate-input" data-validate="Please enter your name">
-					<input class="input100" type="text" name="name" placeholder="Full Name">
+				<div class="wrap-input100 validate-input" data-validate="cityName">
+					<input class="input100" type="text" name="locationName" placeholder="name of city">
 					<span class="focus-input100"></span>
 				</div>
 
-				<div class="wrap-input100 validate-input" data-validate = "Please enter your email: e@a.x">
-					<input class="input100" type="text" name="email" placeholder="E-mail">
+				<div class="wrap-input100 validate-input" data-validate = "information">
+					<input class="input100" type="text" name="locationInfo" placeholder="information" >
 					<span class="focus-input100"></span>
 				</div>
 
-				<div class="wrap-input100 validate-input" data-validate = "Please enter your phone">
-					<input class="input100" type="text" name="phone" placeholder="Phone">
+				<div class="wrap-input100 validate-input" data-validate = "pictureLink">
+					<input class="input100" type="text" name="pictureLink" placeholder="link of picture" >
 					<span class="focus-input100"></span>
 				</div>
 
-				<div class="wrap-input100 validate-input" data-validate = "Please enter your message">
-					<textarea class="input100" name="message" placeholder="Your Message"></textarea>
+				<div class="wrap-input100 validate-input" data-validate = "top">
+					<input class="input100" type="number" name="top" placeholder="top" >
 					<span class="focus-input100"></span>
 				</div>
 
-				<div class="container-contact100-form-btn">
-					<button class="contact100-form-btn">
+				<div class="wrap-input100 validate-input" data-validate = "left">
+					<input class="input100" type="number" name="left" placeholder="left">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate = "compass">
+					<input class="input100" type="text" name="compass" placeholder="compass" >
+					<span class="focus-input100"></span>
+				</div>
+
+				<!-- <div class="container-contact100-form-btn"> -->
+					<input type="submit" name="submit" value="Submit" class="contact100-form-btn">
+					<!-- <button class="contact100-form-btn">
 						<span>
 							<i class="fa fa-paper-plane-o m-r-6" aria-hidden="true"></i>
 							Send
 						</span>
-					</button>
-				</div>
+					</button> -->
+				<!-- </div> -->
 			</form>
 		</div>
 	</div>

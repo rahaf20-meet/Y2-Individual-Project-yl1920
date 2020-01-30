@@ -43,10 +43,10 @@ def signup():
 @app.route('/admin' , methods=['POST','GET'])
 def admin():
 	if request.method == 'POST':
-		if request.form['password'] == 'rahafzorba':
-			return render_template('admin.html')
-		else:
-			return render_template('homePage.html')
+		# if request.form['password'] == 'rahafzorba':
+		# 	return render_template('admin.html')
+		# else:
+		# 	return render_template('homePage.html')
 		locationName = request.form['locationName']
 		locationInfo = request.form['locationInfo']
 		pictureLink = request.form['pictureLink']
